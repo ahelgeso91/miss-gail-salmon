@@ -57,10 +57,19 @@
         }
 
         .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
             font-family: 'Playfair Display', serif;
             font-size: 1.4rem;
             font-weight: 700;
             color: var(--ocean);
+        }        
+
+        .logo img {
+            height: 40px;
+            width: auto;
+            display: block;
         }
 
         .nav-links {
@@ -503,7 +512,11 @@
 </head>
 <body>
     <nav>
-        <div class="logo">Miss Gail Salmon Co.</div>
+        <div class="logo">
+            <img src="images/MissGailTransparentBackground.png" alt="Miss Gail Salmon Co.">
+            <span>Miss Gail Salmon Co.</span>
+        </div>
+
         <ul class="nav-links">
             <li><a href="#story">Our Story</a></li>
             <li><a href="#sustainability">Sustainability</a></li>
