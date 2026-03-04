@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta name="description" content="Wild Bristol Bay salmon from our boat to your table. Small operation, serious fish. Join the waitlist for San Diego delivery Fall 2025.">
+
     <!-- Open Graph / Social Sharing -->
     <meta property="og:title" content="Miss Gail Salmon Co. | Wild Bristol Bay Salmon">
     <meta property="og:description" content="From our boat to your table. Small operation, serious fish.">
     <meta property="og:image" content="https://missgailsalmon.com/images/IMG_3779.jpg">
     <meta property="og:url" content="https://missgailsalmon.com">
     <meta property="og:type" content="website">
-
+    
+    <link rel="icon" type="image/png" href="images/MissGailWhiteBackground.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Miss Gail Salmon Co. | Wild Bristol Bay Salmon</title>
@@ -64,6 +67,8 @@
             font-size: 1.4rem;
             font-weight: 700;
             color: var(--ocean);
+            text-decoration: none;
+            cursor: pointer;
         }        
 
         .logo img {
@@ -510,10 +515,10 @@
 </head>
 <body>
     <nav>
-        <div class="logo">
+        <a href="#" class="logo" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;">
             <img src="images/MissGailTransparentBackground.png" alt="Miss Gail Salmon Co.">
             <span>Miss Gail Salmon Co.</span>
-        </div>
+        </a>
 
         <ul class="nav-links">
             <li><a href="#story">Our Story</a></li>
@@ -656,9 +661,15 @@
     <footer>
         <div class="footer-content">
             <div class="footer-logo">
-                <img src="images/MissGailCircleLogo.png" alt="Miss Gail Salmon Co." style="max-height: 240px; width: autho; margin-bottom: 1rem;">
+                <img src="images/MissGailCircleLogo.png" alt="Miss Gail Salmon Co." style="max-height: 240px; width: auto; margin-bottom: 1rem;">
             </div>
+            
             <p class="footer-tagline">F/V Miss Gail • Bristol Bay, Alaska</p>
+            <p class="footer-email" style="margin-bottom: 1.5rem; opacity: 0.8;">
+                <a href="mailto:hello@missgailsalmon.com" style="color: var(--white); text-decoration: none;">hello@missgailsalmon.com</a></p>
+            <p style="margin-bottom: 1.5rem; opacity: 0.6; font-size: 0.85rem;">
+                <a href="/privacy.html" style="color: var(--white); text-decoration: underline;">Privacy Policy</a>
+            </p>
             <div class="footer-links">
                 <a href="#story">Our Story</a>
                 <a href="#sustainability">Sustainability</a>
@@ -679,13 +690,7 @@
                 });
             });
         });
-
-        // Form handling
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            document.getElementById('successMessage').classList.add('show');
-            this.reset();
-        });
+        
     </script>
 </body>
 </html>
