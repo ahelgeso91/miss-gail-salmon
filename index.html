@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta name="description" content="Wild Bristol Bay salmon from our boat to your table. Small operation, serious fish. Join the waitlist for San Diego delivery Fall 2025.">
+    <meta name="description" content="Wild Bristol Bay salmon from our boat to your table. Small operation, serious fish. Join the waitlist for San Diego delivery Fall 2026.">
 
     <!-- Open Graph / Social Sharing -->
     <meta property="og:title" content="Miss Gail Salmon Co. | Wild Bristol Bay Salmon">
@@ -99,7 +99,7 @@
         .hero {
             min-height: 100vh;
             background: linear-gradient(135deg, rgba(26, 82, 118, 0.85) 0%, rgba(40, 116, 166, 0.85) 100%),
-                        url('images/IMG_3779.jpg');
+                        url('images/season_2026_02.jpg');
             background-size: cover;
             background-position: center;
             display: flex;
@@ -256,6 +256,77 @@
         .gallery-item.featured {
             grid-column: span 2;
             grid-row: span 2;
+        }
+
+        /* Scrolling Photo Strip Section (Above Footer) */
+        .photo-strip-section {
+            background: var(--cream);
+            padding: 5rem 0 3rem 0; /* No side padding so strip goes edge to edge */
+            text-align: center;
+            border-top: 1px solid rgba(26, 82, 118, 0.1);
+        }
+
+        .photo-strip-section h3 {
+            font-size: 2rem;
+            color: var(--ocean);
+            margin-bottom: 0.5rem;
+            padding: 0 5%;
+        }
+
+        .photo-strip-section p {
+            font-size: 1.1rem;
+            opacity: 0.8;
+            margin-bottom: 2.5rem;
+            padding: 0 5%;
+        }
+
+        .photo-strip-container {
+            display: flex;
+            overflow-x: auto;
+            gap: 1.25rem;
+            padding: 1rem 2rem 2rem 2rem;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            -ms-overflow-style: none;  /* IE/Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+
+        .photo-strip-container::-webkit-scrollbar {
+            display: none; /* Chrome, Safari, Opera */
+        }
+
+        .photo-strip-item {
+            flex: 0 0 320px; /* Width of each card on desktop */
+            aspect-ratio: 4/3;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            scroll-snap-align: start;
+            transition: transform 0.3s;
+        }
+
+        .photo-strip-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .photo-strip-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .photo-strip-item:hover img {
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 768px) {
+            .photo-strip-item {
+                flex: 0 0 260px; /* Narrower on mobile */
+            }
+            .photo-strip-container {
+                padding: 1rem;
+            }
         }
 
         /* Sustainability */
@@ -538,7 +609,7 @@
                 </svg>
                 Bristol Bay, Alaska → San Diego, California
             </div>
-            <a href="#contact" class="cta-button">Get on the List</a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdwpImqztlZBCTLLlN8icz9kHSWhtBWdi5YTbiOCDRvq3fRYw/viewform?usp=sharing&ouid=110600937466541891782" target="_blank" class="cta-button">Join the 2026 Waitlist</a>
         </div>
     </section>
 
@@ -552,7 +623,7 @@
                     <p>Bristol Bay isn't just where we fish. It's the most prolific wild salmon fishery on earth, managed sustainably for over a century. We're proud to be a small part of that legacy.</p>
                 </div>
                 <div class="story-image">
-                    <img src="images/IMG_3712.jpg" alt="F/V Miss Gail in Bristol Bay">
+                    <img src="images/season_2026_05.jpg" alt="Ders on the F/V Miss Gail in Bristol Bay">
                 </div>
             </div>
         </div>
@@ -561,19 +632,19 @@
     <section class="gallery">
         <div class="gallery-grid">
             <div class="gallery-item featured">
-                <img src="images/IMG_4043.jpg" alt="Fishing operations on F/V Miss Gail">
+                <img src="images/boat_night_moon.jpg" alt="F/V Miss Gail under a full moon in Bristol Bay">
             </div>
             <div class="gallery-item">
-                <img src="images/IMG_3870.jpg" alt="Bristol Bay salmon">
+                <img src="images/season_2026_08.jpg" alt="Proudly holding a fresh wild sockeye salmon">
             </div>
             <div class="gallery-item">
-                <img src="images/IMG_3963.jpg" alt="On the boat">
+                <img src="images/season_2026_01.jpg" alt="A massive haul of sockeye salmon on the deck of the Miss Gail">
             </div>
             <div class="gallery-item">
-                <img src="images/IMG_3906.jpg" alt="The sunrise">
+                <img src="images/crew_celebrating.jpg" alt="The Miss Gail crew celebrating the 2026 season">
             </div>
             <div class="gallery-item">
-                <img src="images/IMG_4152.jpg" alt="The Gail">
+                <img src="images/season_2026_03.jpg" alt="Hard-working crew resting on a deck of salmon">
             </div>
 
         </div>
@@ -613,7 +684,7 @@
             </div>
             <div class="locations-grid">
                 <div class="location-card featured">
-                    <span class="status">Coming Fall 2025</span>
+                    <span class="status">Coming Fall 2026</span>
                     <h3>Direct from Miss Gail</h3>
                     <p>Whole fish, fillets, and portions shipped to your door or available for pickup in San Diego. Join the waitlist to be first in line.</p>
                 </div>
@@ -629,32 +700,77 @@
     <section class="contact" id="contact">
         <div class="container">
             <h2>Get on the List</h2>
-            <p>Be the first to know when Miss Gail salmon hits San Diego.</p>
+            <p style="margin-bottom: 2rem;">Be the first to know when Miss Gail salmon hits San Diego. Join our waitlist to secure your share of this season's catch.</p>
             
-    <form netlify class="contact-form" id="contactForm" name="waitlist" method="POST" action="/success">
-    <input type="hidden" name="form-name" value="waitlist" />
-    
-    <div class="form-group">
-        <label for="name">Name</label>
-        <input type="text" id="name" name="name" required>
-    </div>
-    
-    <div class="form-group">
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" required>
-    </div>
-    
-    <div class="form-group">
-        <label for="message">Message (optional)</label>
-        <textarea id="message" name="message" rows="3" placeholder="Tell us about your restaurant, how much fish you need, or just say hi..."></textarea>
-    </div>
-    
-    <button type="submit" class="submit-btn">Join the Waitlist</button>
-    </form>
+            <div style="margin: 3rem 0;">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdwpImqztlZBCTLLlN8icz9kHSWhtBWdi5YTbiOCDRvq3fRYw/viewform?usp=sharing&ouid=110600937466541891782" target="_blank" class="cta-button">Join the 2026 Waitlist</a>
+            </div>
 
 
             
             <p class="contact-note">Questions? Email us at <a href="mailto:hello@missgailsalmon.com" style="color: var(--salmon); text-decoration: underline;">hello@missgailsalmon.com</a></p>
+        </div>
+    </section>
+
+    <section class="photo-strip-section">
+        <h3>Live from the F/V Miss Gail</h3>
+        <p>A look at the daily grind and raw scenery from this season in Bristol Bay.</p>
+        
+        <div class="photo-strip-container">
+            <div class="photo-strip-item">
+                <img src="images/season_2026_02.jpg" alt="Stunning ocean sunset from the stern of the Miss Gail">
+            </div>
+            <div class="photo-strip-item">
+                <img src="images/season_2026_06.jpg" alt="Working the night shift under high-beams">
+            </div>
+            <div class="photo-strip-item">
+                <img src="images/season_2026_07.jpg" alt="Crew on deck managing lines during a set">
+            </div>
+            <div class="photo-strip-item">
+                <img src="images/season_2026_10.jpg" alt="Glistening fresh wild sockeye salmon piled on deck">
+            </div>
+            <div class="photo-strip-item">
+                <img src="images/boat_drydock_bow.jpg" alt="The sturdy bow of the F/V Miss Gail on dry dock">
+            </div>
+            <div class="photo-strip-item">
+                <img src="images/season_2026_04.jpg" alt="Deck fish bin filled with sockeye next to nets">
+            </div>
+            <div class="photo-strip-item">
+                <img src="images/season_2026_09.jpg" alt="Crew member holding wild salmon on deck">
+            </div>
+            <div class="photo-strip-item">
+                <img src="images/crew_red_jacket.jpg" alt="Smiling crew selfie in front of the boat">
+            </div>
+            <div class="photo-strip-item">
+                <img src="images/crew_blue_jacket.jpg" alt="Crew member on the water under clear blue skies">
+            </div>
+            <div class="photo-strip-item">
+                <img src="images/crew_orange_beanie.jpg" alt="Smiling at the cabin door on the Miss Gail">
+            </div>
+            <div class="photo-strip-item">
+                <img src="images/net_water_fish.jpg" alt="Gillnet in the water catching sockeye salmon">
+            </div>
+            <div class="photo-strip-item">
+                <img src="images/helm_wheelhouse.jpg" alt="At the helm wheelhouse of the F/V Miss Gail with tide notes">
+            </div>
+            <div class="photo-strip-item">
+                <img src="images/fish_hold_buoys.jpg" alt="The hold packed with wild sockeye salmon and red buoys">
+            </div>
+            <div class="photo-strip-item">
+                <img src="images/net_reel_day.jpg" alt="Green gillnet on the reel on deck">
+            </div>
+            <div class="photo-strip-item">
+                <img src="images/crew_salty_grin.jpg" alt="Salty seaman grin on the water">
+            </div>
+            <div class="photo-strip-item">
+                <img src="images/sunset_net_reel.jpg" alt="Beautiful red sunset past the net reel">
+            </div>
+            <div class="photo-strip-item">
+                <img src="images/sunset_mudflats.jpg" alt="Prism sunset over the mudflats and mountains">
+            </div>
+            <div class="photo-strip-item">
+                <img src="images/sunset_harbor.jpg" alt="Golden sunset reflecting on the harbor yard">
+            </div>
         </div>
     </section>
 
@@ -690,7 +806,6 @@
                 });
             });
         });
-        
     </script>
 </body>
 </html>
