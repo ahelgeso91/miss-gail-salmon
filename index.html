@@ -221,127 +221,112 @@
             object-fit: cover;
         }
 
-        /* Carousel Gallery Section */
+        /* Gallery Section */
         .gallery {
             background: var(--ocean);
-            padding: 5rem 5%;
-            text-align: center;
+            padding: 4rem 5%;
         }
 
-        .carousel-container {
-            position: relative;
-            max-width: 1000px;
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            max-width: 1200px;
             margin: 0 auto;
-            overflow: hidden;
+        }
+
+        .gallery-item {
+            aspect-ratio: 1;
             border-radius: 8px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
-        }
-
-        .carousel-track {
-            display: flex;
-            transition: transform 0.5s ease-in-out;
-            width: 100%;
-        }
-
-        .carousel-slide {
-            min-width: 100%;
-            aspect-ratio: 16/9;
             overflow: hidden;
-            position: relative;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
         }
 
-        .carousel-slide img {
+        .gallery-item img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            transition: transform 0.3s;
         }
 
-        .carousel-caption {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
-            color: var(--white);
-            padding: 1.5rem 2.5rem;
-            text-align: left;
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .gallery-item.featured {
+            grid-column: span 2;
+            grid-row: span 2;
+        }
+
+        /* Scrolling Photo Strip Section (Above Footer) */
+        .photo-strip-section {
+            background: var(--cream);
+            padding: 5rem 0 3rem 0; /* No side padding so strip goes edge to edge */
+            text-align: center;
+            border-top: 1px solid rgba(26, 82, 118, 0.1);
+        }
+
+        .photo-strip-section h3 {
+            font-size: 2rem;
+            color: var(--ocean);
+            margin-bottom: 0.5rem;
+            padding: 0 5%;
+        }
+
+        .photo-strip-section p {
             font-size: 1.1rem;
-            font-weight: 500;
+            opacity: 0.8;
+            margin-bottom: 2.5rem;
+            padding: 0 5%;
         }
 
-        /* Controls */
-        .carousel-btn {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(5px);
-            color: var(--white);
-            border: none;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            cursor: pointer;
-            font-size: 1.5rem;
+        .photo-strip-container {
             display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: background 0.3s, transform 0.3s;
-            z-index: 10;
+            overflow-x: auto;
+            gap: 1.25rem;
+            padding: 1rem 2rem 2rem 2rem;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            -ms-overflow-style: none;  /* IE/Edge */
+            scrollbar-width: none;  /* Firefox */
         }
 
-        .carousel-btn:hover {
-            background: var(--salmon);
-            transform: translateY(-50%) scale(1.1);
+        .photo-strip-container::-webkit-scrollbar {
+            display: none; /* Chrome, Safari, Opera */
         }
 
-        .carousel-btn.prev {
-            left: 20px;
+        .photo-strip-item {
+            flex: 0 0 320px; /* Width of each card on desktop */
+            aspect-ratio: 4/3;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            scroll-snap-align: start;
+            transition: transform 0.3s;
         }
 
-        .carousel-btn.next {
-            right: 20px;
+        .photo-strip-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
         }
 
-        /* Indicators */
-        .carousel-dots {
-            display: flex;
-            justify-content: center;
-            gap: 0.5rem;
-            margin-top: 1.5rem;
+        .photo-strip-item:hover {
+            transform: translateY(-5px);
         }
 
-        .carousel-dot {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.3);
-            border: none;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-
-        .carousel-dot.active {
-            background: var(--salmon);
-            width: 25px;
-            border-radius: 10px;
+        .photo-strip-item:hover img {
+            transform: scale(1.05);
         }
 
         @media (max-width: 768px) {
-            .carousel-slide {
-                aspect-ratio: 4/3;
+            .photo-strip-item {
+                flex: 0 0 260px; /* Narrower on mobile */
             }
-            .carousel-caption {
-                font-size: 0.95rem;
+            .photo-strip-container {
                 padding: 1rem;
             }
-            .carousel-btn {
-                width: 40px;
-                height: 40px;
-                font-size: 1.2rem;
-            }
-            .carousel-btn.prev { left: 10px; }
-            .carousel-btn.next { right: 10px; }
         }
 
         /* Sustainability */
@@ -645,55 +630,24 @@
     </section>
 
     <section class="gallery">
-        <div class="carousel-container">
-            <button class="carousel-btn prev" id="prevBtn" aria-label="Previous slide">❮</button>
-            <button class="carousel-btn next" id="nextBtn" aria-label="Next slide">❯</button>
-            
-            <div class="carousel-track" id="carouselTrack">
-                <div class="carousel-slide">
-                    <img src="images/boat_night_moon.jpg" alt="F/V Miss Gail under a full moon in Bristol Bay">
-                    <div class="carousel-caption">The F/V Miss Gail under a full moon at dock in Bristol Bay</div>
-                </div>
-                <div class="carousel-slide">
-                    <img src="images/season_2026_08.jpg" alt="Proudly holding a fresh wild sockeye salmon">
-                    <div class="carousel-caption">Fresh wild sockeye straight from the cold waters of Alaska</div>
-                </div>
-                <div class="carousel-slide">
-                    <img src="images/season_2026_01.jpg" alt="A massive haul of sockeye salmon on the deck of the Miss Gail">
-                    <div class="carousel-caption">A massive haul of glistening silver sockeye fills the deck</div>
-                </div>
-                <div class="carousel-slide">
-                    <img src="images/crew_celebrating.jpg" alt="The Miss Gail crew celebrating the 2026 season">
-                    <div class="carousel-caption">Crew celebrating a successful set in front of the boat</div>
-                </div>
-                <div class="carousel-slide">
-                    <img src="images/season_2026_03.jpg" alt="Hard-working crew resting on a deck of salmon">
-                    <div class="carousel-caption">Camaraderie and quick rest on a deck packed with fish</div>
-                </div>
-                <div class="carousel-slide">
-                    <img src="images/season_2026_02.jpg" alt="Stunning fiery ocean sunset over Bristol Bay">
-                    <div class="carousel-caption">An incredible burning sunset over the ocean from the stern</div>
-                </div>
-                <div class="carousel-slide">
-                    <img src="images/season_2026_06.jpg" alt="Night-shift deck operations under spotlights">
-                    <div class="carousel-caption">Night shift deck operations under the bright spotlights</div>
-                </div>
-                <div class="carousel-slide">
-                    <img src="images/season_2026_07.jpg" alt="Crew member holding rope looking over the water">
-                    <div class="carousel-caption">Focused and ready during a set on the Bay</div>
-                </div>
-                <div class="carousel-slide">
-                    <img src="images/season_2026_10.jpg" alt="Macro top-down shot of fresh silver salmon">
-                    <div class="carousel-caption">Shimmering, fresh-caught wild sockeye salmon</div>
-                </div>
-                <div class="carousel-slide">
-                    <img src="images/boat_drydock_bow.jpg" alt="F/V Miss Gail bow view on dry dock">
-                    <div class="carousel-caption">Close-up of the F/V Miss Gail bow getting ready for the season</div>
-                </div>
+        <div class="gallery-grid">
+            <div class="gallery-item featured">
+                <img src="images/boat_night_moon.jpg" alt="F/V Miss Gail under a full moon in Bristol Bay">
             </div>
+            <div class="gallery-item">
+                <img src="images/season_2026_08.jpg" alt="Proudly holding a fresh wild sockeye salmon">
+            </div>
+            <div class="gallery-item">
+                <img src="images/season_2026_01.jpg" alt="A massive haul of sockeye salmon on the deck of the Miss Gail">
+            </div>
+            <div class="gallery-item">
+                <img src="images/crew_celebrating.jpg" alt="The Miss Gail crew celebrating the 2026 season">
+            </div>
+            <div class="gallery-item">
+                <img src="images/season_2026_03.jpg" alt="Hard-working crew resting on a deck of salmon">
+            </div>
+
         </div>
-        
-        <div class="carousel-dots" id="carouselDots"></div>
     </section>
 
     <section class="sustainability" id="sustainability">
@@ -758,6 +712,41 @@
         </div>
     </section>
 
+    <section class="photo-strip-section">
+        <h3>Live from the F/V Miss Gail</h3>
+        <p>A look at the daily grind and raw scenery from this season in Bristol Bay.</p>
+        
+        <div class="photo-strip-container">
+            <div class="photo-strip-item">
+                <img src="images/season_2026_02.jpg" alt="Stunning ocean sunset from the stern of the Miss Gail">
+            </div>
+            <div class="photo-strip-item">
+                <img src="images/season_2026_06.jpg" alt="Working the night shift under high-beams">
+            </div>
+            <div class="photo-strip-item">
+                <img src="images/season_2026_07.jpg" alt="Crew on deck managing lines during a set">
+            </div>
+            <div class="photo-strip-item">
+                <img src="images/season_2026_10.jpg" alt="Glistening fresh wild sockeye salmon piled on deck">
+            </div>
+            <div class="photo-strip-item">
+                <img src="images/boat_drydock_bow.jpg" alt="The sturdy bow of the F/V Miss Gail on dry dock">
+            </div>
+            <div class="photo-strip-item">
+                <img src="images/season_2026_04.jpg" alt="Deck fish bin filled with sockeye next to nets">
+            </div>
+            <div class="photo-strip-item">
+                <img src="images/season_2026_09.jpg" alt="Crew member holding wild salmon on deck">
+            </div>
+            <div class="photo-strip-item">
+                <img src="images/crew_red_jacket.jpg" alt="Smiling crew selfie in front of the boat">
+            </div>
+            <div class="photo-strip-item">
+                <img src="images/crew_blue_jacket.jpg" alt="Crew member on the water under clear blue skies">
+            </div>
+        </div>
+    </section>
+
     <footer>
         <div class="footer-content">
             <div class="footer-logo">
@@ -790,76 +779,6 @@
                 });
             });
         });
-
-        // Carousel Functionality
-        const track = document.getElementById('carouselTrack');
-        const slides = Array.from(track.children);
-        const nextButton = document.getElementById('nextBtn');
-        const prevButton = document.getElementById('prevBtn');
-        const dotsContainer = document.getElementById('carouselDots');
-        
-        let currentIndex = 0;
-        let slideInterval;
-
-        // Create Indicators (Dots)
-        slides.forEach((_, index) => {
-            const dot = document.createElement('button');
-            dot.classList.add('carousel-dot');
-            if (index === 0) dot.classList.add('active');
-            dot.addEventListener('click', () => {
-                goToSlide(index);
-                resetTimer();
-            });
-            dotsContainer.appendChild(dot);
-        });
-
-        const dots = Array.from(dotsContainer.children);
-
-        function updateDots() {
-            dots.forEach((dot, index) => {
-                if (index === currentIndex) {
-                    dot.classList.add('active');
-                } else {
-                    dot.classList.remove('active');
-                }
-            });
-        }
-
-        function goToSlide(index) {
-            if (index < 0) {
-                currentIndex = slides.length - 1;
-            } else if (index >= slides.length) {
-                currentIndex = 0;
-            } else {
-                currentIndex = index;
-            }
-            track.style.transform = `translateX(-${currentIndex * 100}%)`;
-            updateDots();
-        }
-
-        nextButton.addEventListener('click', () => {
-            goToSlide(currentIndex + 1);
-            resetTimer();
-        });
-
-        prevButton.addEventListener('click', () => {
-            goToSlide(currentIndex - 1);
-            resetTimer();
-        });
-
-        // Auto play
-        function startTimer() {
-            slideInterval = setInterval(() => {
-                goToSlide(currentIndex + 1);
-            }, 5000); // Change slide every 5 seconds
-        }
-
-        function resetTimer() {
-            clearInterval(slideInterval);
-            startTimer();
-        }
-
-        startTimer();
     </script>
 </body>
 </html>
