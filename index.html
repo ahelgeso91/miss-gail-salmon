@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta name="description" content="Wild Bristol Bay salmon from our boat to your table. Small operation, serious fish. Join the waitlist for San Diego delivery Fall 2026.">
+    <meta name="description" content="Wild Bristol Bay salmon from our boat to your table. First shipment expected in October 2026. Sign up for first dibs in San Diego.">
 
     <!-- Open Graph / Social Sharing -->
     <meta property="og:title" content="Miss Gail Salmon Co. | Wild Bristol Bay Salmon">
-    <meta property="og:description" content="From our boat to your table. Small operation, serious fish.">
+    <meta property="og:description" content="First shipment expected in October 2026. Sign up for first dibs on wild Bristol Bay salmon in San Diego.">
     <meta property="og:image" content="https://missgailsalmon.com/images/IMG_3779.jpg">
     <meta property="og:url" content="https://missgailsalmon.com">
     <meta property="og:type" content="website">
@@ -138,6 +138,18 @@
             font-weight: 600;
             font-size: 1rem;
             margin-bottom: 2.5rem;
+        }
+
+        .hero-release {
+            max-width: 620px;
+            margin: -0.75rem auto 2rem;
+            color: rgba(255, 255, 255, 0.92);
+            font-size: 1.1rem;
+            line-height: 1.5;
+        }
+
+        .hero-release strong {
+            color: var(--white);
         }
 
         .cta-button {
@@ -582,6 +594,67 @@
         .success-message.show {
             display: block;
         }
+
+        /* First-release sales popup */
+        .sales-popup {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            padding: 1.25rem;
+            background: rgba(10, 35, 52, 0.78);
+        }
+
+        .sales-popup.is-open {
+            display: flex;
+        }
+
+        .sales-popup-card {
+            position: relative;
+            width: min(100%, 510px);
+            padding: clamp(2rem, 6vw, 3rem);
+            border-radius: 10px;
+            background: var(--cream);
+            text-align: center;
+            box-shadow: 0 18px 60px rgba(0, 0, 0, 0.35);
+        }
+
+        .sales-popup-card h2 {
+            margin-bottom: 0.85rem;
+            color: var(--ocean);
+            font-size: clamp(1.8rem, 5vw, 2.5rem);
+            line-height: 1.15;
+        }
+
+        .sales-popup-card p {
+            margin-bottom: 1.25rem;
+        }
+
+        .sales-popup-close {
+            position: absolute;
+            top: 0.5rem;
+            right: 0.85rem;
+            border: 0;
+            background: transparent;
+            color: var(--charcoal);
+            cursor: pointer;
+            font-size: 2rem;
+            line-height: 1;
+        }
+
+        .sales-popup-close:hover {
+            color: var(--salmon);
+        }
+
+        .sales-popup-fine-print {
+            margin-top: 1rem;
+            margin-bottom: 0 !important;
+            color: #68747d;
+            font-size: 0.8rem;
+            line-height: 1.5;
+        }
     </style>
 </head>
 <body>
@@ -609,7 +682,8 @@
                 </svg>
                 Bristol Bay, Alaska → San Diego, California
             </div>
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdwpImqztlZBCTLLlN8icz9kHSWhtBWdi5YTbiOCDRvq3fRYw/viewform?usp=sharing&ouid=110600937466541891782" target="_blank" class="cta-button">Join the 2026 Waitlist</a>
+            <p class="hero-release"><strong>First shipment expected October 2026.</strong><br>Sign up now for first dibs on the first release in San Diego.</p>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdwpImqztlZBCTLLlN8icz9kHSWhtBWdi5YTbiOCDRvq3fRYw/viewform?usp=sharing&ouid=110600937466541891782" target="_blank" rel="noopener" class="cta-button sales-form-link">Get First Dibs for October</a>
         </div>
     </section>
 
@@ -680,13 +754,13 @@
         <div class="container">
             <div class="section-header">
                 <h2>Where to Find Us</h2>
-                <p>Summer 2026: Bristol Bay. Fall 2026: San Diego.</p>
+                <p>First shipment expected October 2026. San Diego pickup first, with shipping details to follow.</p>
             </div>
             <div class="locations-grid">
                 <div class="location-card featured">
-                    <span class="status">Coming Fall 2026</span>
+                    <span class="status">Expected October 2026</span>
                     <h3>Direct from Miss Gail</h3>
-                    <p>Whole fish, fillets, and portions shipped to your door or available for pickup in San Diego. Join the waitlist to be first in line.</p>
+                    <p>Whole fish, fillets, and portions will be available for pickup in San Diego first, with shipping details confirmed as the first release gets closer. Sign up for first dibs.</p>
                 </div>
                 <div class="location-card">
                     <span class="status">In Development</span>
@@ -700,10 +774,10 @@
     <section class="contact" id="contact">
         <div class="container">
             <h2>Get on the List</h2>
-            <p style="margin-bottom: 2rem;">Be the first to know when Miss Gail salmon hits San Diego. Join our waitlist to secure your share of this season's catch.</p>
+            <p style="margin-bottom: 2rem;">The first shipment is expected in October 2026. Sign up for first dibs and we’ll send the release details before sales open.</p>
             
             <div style="margin: 3rem 0;">
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdwpImqztlZBCTLLlN8icz9kHSWhtBWdi5YTbiOCDRvq3fRYw/viewform?usp=sharing&ouid=110600937466541891782" target="_blank" class="cta-button">Join the 2026 Waitlist</a>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdwpImqztlZBCTLLlN8icz9kHSWhtBWdi5YTbiOCDRvq3fRYw/viewform?usp=sharing&ouid=110600937466541891782" target="_blank" rel="noopener" class="cta-button sales-form-link">Get First Dibs for October</a>
             </div>
 
 
@@ -774,6 +848,16 @@
         </div>
     </section>
 
+    <div id="sales-popup" class="sales-popup" role="dialog" aria-modal="true" aria-labelledby="sales-popup-title" aria-hidden="true">
+        <div class="sales-popup-card">
+            <button type="button" class="sales-popup-close" aria-label="Close">×</button>
+            <h2 id="sales-popup-title">First shipment expected October 2026</h2>
+            <p>Sign up for first dibs on wild Bristol Bay sockeye from the F/V Miss Gail. We’re targeting <strong>$25/lb for a 10-lb box</strong>, with San Diego pickup first.</p>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdwpImqztlZBCTLLlN8icz9kHSWhtBWdi5YTbiOCDRvq3fRYw/viewform?usp=sharing&ouid=110600937466541891782" target="_blank" rel="noopener" class="cta-button sales-form-link">Get First Dibs</a>
+            <p class="sales-popup-fine-print">No commitment yet. We’ll confirm final price, quantity, and pickup details before payment.</p>
+        </div>
+    </div>
+
     <footer>
         <div class="footer-content">
             <div class="footer-logo">
@@ -797,6 +881,38 @@
     </footer>
 
     <script>
+        // Referral tracking: add a Referral code question to the Google Form,
+        // then replace the blank ID below with its entry ID (for example entry.123456789).
+        const FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSdwpImqztlZBCTLLlN8icz9kHSWhtBWdi5YTbiOCDRvq3fRYw/viewform?usp=sharing&ouid=110600937466541891782';
+        const REFERRAL_ENTRY_ID = '';
+        const query = new URLSearchParams(window.location.search);
+        const referral = query.get('ref');
+        if (referral) localStorage.setItem('missGailReferral', referral.toUpperCase().replace(/[^A-Z0-9_-]/g, '').slice(0, 40));
+
+        const storedReferral = localStorage.getItem('missGailReferral');
+        document.querySelectorAll('.sales-form-link').forEach(link => {
+            const url = new URL(FORM_URL);
+            if (storedReferral && REFERRAL_ENTRY_ID) url.searchParams.set(REFERRAL_ENTRY_ID, storedReferral);
+            link.href = url.toString();
+        });
+
+        // Show the offer once per browser, after the visitor has had time to read the page.
+        const popup = document.getElementById('sales-popup');
+        const closePopup = () => {
+            popup.classList.remove('is-open');
+            popup.setAttribute('aria-hidden', 'true');
+            localStorage.setItem('missGailPopupSeen', '1');
+        };
+        popup.querySelector('.sales-popup-close').addEventListener('click', closePopup);
+        popup.addEventListener('click', event => { if (event.target === popup) closePopup(); });
+        document.addEventListener('keydown', event => { if (event.key === 'Escape' && popup.classList.contains('is-open')) closePopup(); });
+        if (!localStorage.getItem('missGailPopupSeen')) {
+            window.setTimeout(() => {
+                popup.classList.add('is-open');
+                popup.setAttribute('aria-hidden', 'false');
+            }, 3500);
+        }
+
         // Smooth scroll for nav links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
