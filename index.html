@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta name="description" content="Wild Bristol Bay salmon from our boat to your table. Small operation, serious fish. Join the waitlist for San Diego delivery Fall 2026.">
+    <meta name="description" content="Wild Bristol Bay salmon caught by the crew of the F/V Miss Gail and offered directly in San Diego. Request a 10- or 20-pound share box.">
 
     <!-- Open Graph / Social Sharing -->
     <meta property="og:title" content="Miss Gail Salmon Co. | Wild Bristol Bay Salmon">
-    <meta property="og:description" content="From our boat to your table. Small operation, serious fish.">
+    <meta property="og:description" content="Wild Bristol Bay salmon caught by the crew of the F/V Miss Gail and offered directly in San Diego. Request a share box.">
     <meta property="og:image" content="https://missgailsalmon.com/images/IMG_3779.jpg">
     <meta property="og:url" content="https://missgailsalmon.com">
     <meta property="og:type" content="website">
@@ -138,6 +138,18 @@
             font-weight: 600;
             font-size: 1rem;
             margin-bottom: 2.5rem;
+        }
+
+        .hero-release {
+            max-width: 620px;
+            margin: -0.75rem auto 2rem;
+            color: rgba(255, 255, 255, 0.92);
+            font-size: 1.1rem;
+            line-height: 1.5;
+        }
+
+        .hero-release strong {
+            color: var(--white);
         }
 
         .cta-button {
@@ -582,6 +594,67 @@
         .success-message.show {
             display: block;
         }
+
+        /* First-release sales popup */
+        .sales-popup {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            padding: 1.25rem;
+            background: rgba(10, 35, 52, 0.78);
+        }
+
+        .sales-popup.is-open {
+            display: flex;
+        }
+
+        .sales-popup-card {
+            position: relative;
+            width: min(100%, 510px);
+            padding: clamp(2rem, 6vw, 3rem);
+            border-radius: 10px;
+            background: var(--cream);
+            text-align: center;
+            box-shadow: 0 18px 60px rgba(0, 0, 0, 0.35);
+        }
+
+        .sales-popup-card h2 {
+            margin-bottom: 0.85rem;
+            color: var(--ocean);
+            font-size: clamp(1.8rem, 5vw, 2.5rem);
+            line-height: 1.15;
+        }
+
+        .sales-popup-card p {
+            margin-bottom: 1.25rem;
+        }
+
+        .sales-popup-close {
+            position: absolute;
+            top: 0.5rem;
+            right: 0.85rem;
+            border: 0;
+            background: transparent;
+            color: var(--charcoal);
+            cursor: pointer;
+            font-size: 2rem;
+            line-height: 1;
+        }
+
+        .sales-popup-close:hover {
+            color: var(--salmon);
+        }
+
+        .sales-popup-fine-print {
+            margin-top: 1rem;
+            margin-bottom: 0 !important;
+            color: #68747d;
+            font-size: 0.8rem;
+            line-height: 1.5;
+        }
     </style>
 </head>
 <body>
@@ -594,7 +667,7 @@
         <ul class="nav-links">
             <li><a href="#story">Our Story</a></li>
             <li><a href="#sustainability">Sustainability</a></li>
-            <li><a href="#availability">Where to Buy</a></li>
+            <li><a href="#availability">How It Works</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
@@ -602,14 +675,15 @@
     <section class="hero">
         <div class="hero-content">
             <h1>Wild Bristol Bay Salmon</h1>
-            <p class="hero-tagline">From our boat to your table. Small operation, serious fish.</p>
+            <p class="hero-tagline">Caught in Bristol Bay. Shared in San Diego.</p>
             <div class="hero-location">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
                 </svg>
                 Bristol Bay, Alaska → San Diego, California
             </div>
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdwpImqztlZBCTLLlN8icz9kHSWhtBWdi5YTbiOCDRvq3fRYw/viewform?usp=sharing&ouid=110600937466541891782" target="_blank" class="cta-button">Join the 2026 Waitlist</a>
+            <p class="hero-release"><strong>Limited release: 1,300 lb in San Diego.</strong><br>Secure your box while this catch is available. We'll follow up to confirm your order and arrange pickup or delivery.</p>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdwpImqztlZBCTLLlN8icz9kHSWhtBWdi5YTbiOCDRvq3fRYw/viewform?usp=sharing&ouid=110600937466541891782" target="_blank" rel="noopener" class="cta-button sales-form-link">Order now</a>
         </div>
     </section>
 
@@ -617,10 +691,10 @@
         <div class="container">
             <div class="story-grid">
                 <div class="story-text">
-                    <h3>This Season, It's Our Boat</h3>
-                    <p>The F/V Miss Gail has been fishing Bristol Bay for nearly 50 years. This season, for the first time, it's ours, and we're bringing that salmon home to San Diego.</p>
-                    <p>We're a two-man operation doing this the right way: one boat, one fishery, no middlemen. When you buy from Miss Gail Salmon Co., you're buying fish we caught, handled, and shipped ourselves.</p>
-                    <p>Bristol Bay isn't just where we fish. It's the most prolific wild salmon fishery on earth, managed sustainably for over a century. We're proud to be a small part of that legacy.</p>
+                    <h3>A small boat, a short route home</h3>
+                    <p>Miss Gail is a Bristol Bay drift gillnetter. In 2026, our crew fished her waters and we're bringing part of that catch back to San Diego.</p>
+                    <p>We keep this simple: fish caught by our crew, handled on the boat, shipped south, and sold directly. No long chain of middlemen between the boat and your kitchen.</p>
+                    <p>Bristol Bay is a working fishery with strict limits and active in-season management. The fishery's future depends on the run, the rules, and people who follow both.</p>
                 </div>
                 <div class="story-image">
                     <img src="images/season_2026_05.jpg" alt="Ders on the F/V Miss Gail in Bristol Bay">
@@ -653,24 +727,24 @@
     <section class="sustainability" id="sustainability">
         <div class="container">
             <div class="section-header">
-                <h2>Why Bristol Bay Matters</h2>
-                <p>The world's largest wild sockeye salmon run, managed by science, sustained by people who give a damn.</p>
+                <h2>What you're buying</h2>
+                <p>Wild sockeye from a managed fishery, handled by the people who caught it.</p>
             </div>
             <div class="values-grid">
                 <div class="value-card">
                     <div class="value-icon">🐟</div>
-                    <h3>Wild & Natural</h3>
-                    <p>These fish hatched in wild rivers, spent years in the open ocean, and returned to spawn. No farms. No pens. Just salmon being salmon.</p>
+                    <h3>Wild fish</h3>
+                    <p>No pens or feed. Sockeye spend their lives in the ocean and return to Bristol Bay to spawn.</p>
                 </div>
                 <div class="value-card">
                     <div class="value-icon">⚖️</div>
-                    <h3>Science-Based Limits</h3>
-                    <p>Bristol Bay's fishery is strictly regulated by Alaska Department of Fish & Game. They count fish with sonar, open and close the season by the numbers.</p>
+                    <h3>Managed by the run</h3>
+                    <p>Alaska Department of Fish & Game monitors the runs and manages openings to protect enough fish for the next generation.</p>
                 </div>
                 <div class="value-card">
                     <div class="value-icon">🔄</div>
-                    <h3>Boat to Fork</h3>
-                    <p>We catch it, we ice it, we ship it. Shortest supply chain possible. You know exactly where your fish came from because we were there.</p>
+                    <h3>Direct from the boat</h3>
+                    <p>We know the boat, the crew, the processor, and the route. That's the point of buying direct.</p>
                 </div>
             </div>
         </div>
@@ -679,19 +753,19 @@
     <section class="availability" id="availability">
         <div class="container">
             <div class="section-header">
-                <h2>Where to Find Us</h2>
-                <p>Summer 2026: Bristol Bay. Fall 2026: San Diego.</p>
+                <h2>How ordering works</h2>
+                <p>The salmon is in San Diego and available to order now. This release is limited to 1,300 lb. Pricing is by box size: under 10 lb is $25/lb, a 10-lb box is $23/lb, and a 20-lb box is $20/lb.</p>
             </div>
             <div class="locations-grid">
                 <div class="location-card featured">
-                    <span class="status">Coming Fall 2026</span>
-                    <h3>Direct from Miss Gail</h3>
-                    <p>Whole fish, fillets, and portions shipped to your door or available for pickup in San Diego. Join the waitlist to be first in line.</p>
+                    <span class="status">Step 1</span>
+                    <h3>Secure your box</h3>
+                    <p>Use the order form to choose a 10- or 20-pound share box, tell us where you are, and include any questions. This release is limited, so order before the catch is spoken for.</p>
                 </div>
                 <div class="location-card">
-                    <span class="status">In Development</span>
-                    <h3>Restaurants & Retail</h3>
-                    <p>We're talking to San Diego chefs and fish markets about carrying Miss Gail salmon. Know someone who should stock us? Send them our way.</p>
+                    <span class="status">Step 2</span>
+                    <h3>We arrange the handoff</h3>
+                    <p>We'll contact you to confirm your order, arrange pickup or delivery, and send the payment details. The form starts your order request; it does not take payment.</p>
                 </div>
             </div>
         </div>
@@ -699,11 +773,11 @@
 
     <section class="contact" id="contact">
         <div class="container">
-            <h2>Get on the List</h2>
-            <p style="margin-bottom: 2rem;">Be the first to know when Miss Gail salmon hits San Diego. Join our waitlist to secure your share of this season's catch.</p>
+            <h2>Ready to order?</h2>
+            <p style="margin-bottom: 2rem;">There are 1,300 lb in this San Diego release. Request a share box below and secure yours before this catch is gone.</p>
             
             <div style="margin: 3rem 0;">
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdwpImqztlZBCTLLlN8icz9kHSWhtBWdi5YTbiOCDRvq3fRYw/viewform?usp=sharing&ouid=110600937466541891782" target="_blank" class="cta-button">Join the 2026 Waitlist</a>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdwpImqztlZBCTLLlN8icz9kHSWhtBWdi5YTbiOCDRvq3fRYw/viewform?usp=sharing&ouid=110600937466541891782" target="_blank" rel="noopener" class="cta-button sales-form-link">Order now</a>
             </div>
 
 
@@ -713,8 +787,8 @@
     </section>
 
     <section class="photo-strip-section">
-        <h3>Live from the F/V Miss Gail</h3>
-        <p>A look at the daily grind and raw scenery from this season in Bristol Bay.</p>
+        <h3>A season on the Miss Gail</h3>
+        <p>Photos from the boat and Bristol Bay.</p>
         
         <div class="photo-strip-container">
             <div class="photo-strip-item">
@@ -774,13 +848,23 @@
         </div>
     </section>
 
+    <div id="sales-popup" class="sales-popup" role="dialog" aria-modal="true" aria-labelledby="sales-popup-title" aria-hidden="true">
+        <div class="sales-popup-card">
+            <button type="button" class="sales-popup-close" aria-label="Close">×</button>
+            <h2 id="sales-popup-title">Wild Bristol Bay salmon, direct from the boat</h2>
+            <p>Limited release: 1,300 lb in San Diego. Pricing is <strong>$25/lb for orders under 10 lb, $23/lb for a 10-lb box, and $20/lb for a 20-lb box</strong>. Submit the form to secure your box before this catch is gone.</p>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdwpImqztlZBCTLLlN8icz9kHSWhtBWdi5YTbiOCDRvq3fRYw/viewform?usp=sharing&ouid=110600937466541891782" target="_blank" rel="noopener" class="cta-button sales-form-link">Order now</a>
+            <p class="sales-popup-fine-print">Submitting the form is a request, not a charge. We'll contact you before any payment is due.</p>
+        </div>
+    </div>
+
     <footer>
         <div class="footer-content">
             <div class="footer-logo">
                 <img src="images/MissGailCircleLogo.png" alt="Miss Gail Salmon Co." style="max-height: 240px; width: auto; margin-bottom: 1rem;">
             </div>
             
-            <p class="footer-tagline">F/V Miss Gail • Bristol Bay, Alaska</p>
+            <p class="footer-tagline">F/V Miss Gail • Bristol Bay, Alaska → San Diego, California</p>
             <p class="footer-email" style="margin-bottom: 1.5rem; opacity: 0.8;">
                 <a href="mailto:hello@missgailsalmon.com" style="color: var(--white); text-decoration: none;">hello@missgailsalmon.com</a></p>
             <p style="margin-bottom: 1.5rem; opacity: 0.6; font-size: 0.85rem;">
@@ -789,7 +873,7 @@
             <div class="footer-links">
                 <a href="#story">Our Story</a>
                 <a href="#sustainability">Sustainability</a>
-                <a href="#availability">Where to Buy</a>
+                <a href="#availability">How It Works</a>
                 <a href="#contact">Contact</a>
             </div>
             <p class="copyright">© 2026 F/V Miss Gail LLC. All rights reserved.</p>
@@ -797,6 +881,38 @@
     </footer>
 
     <script>
+        // Referral tracking: add a Referral code question to the Google Form,
+        // then replace the blank ID below with its entry ID (for example entry.123456789).
+        const FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSdwpImqztlZBCTLLlN8icz9kHSWhtBWdi5YTbiOCDRvq3fRYw/viewform?usp=sharing&ouid=110600937466541891782';
+        const REFERRAL_ENTRY_ID = '';
+        const query = new URLSearchParams(window.location.search);
+        const referral = query.get('ref');
+        if (referral) localStorage.setItem('missGailReferral', referral.toUpperCase().replace(/[^A-Z0-9_-]/g, '').slice(0, 40));
+
+        const storedReferral = localStorage.getItem('missGailReferral');
+        document.querySelectorAll('.sales-form-link').forEach(link => {
+            const url = new URL(FORM_URL);
+            if (storedReferral && REFERRAL_ENTRY_ID) url.searchParams.set(REFERRAL_ENTRY_ID, storedReferral);
+            link.href = url.toString();
+        });
+
+        // Show the offer once per browser, after the visitor has had time to read the page.
+        const popup = document.getElementById('sales-popup');
+        const closePopup = () => {
+            popup.classList.remove('is-open');
+            popup.setAttribute('aria-hidden', 'true');
+            localStorage.setItem('missGailPopupSeen', '1');
+        };
+        popup.querySelector('.sales-popup-close').addEventListener('click', closePopup);
+        popup.addEventListener('click', event => { if (event.target === popup) closePopup(); });
+        document.addEventListener('keydown', event => { if (event.key === 'Escape' && popup.classList.contains('is-open')) closePopup(); });
+        if (!localStorage.getItem('missGailPopupSeen')) {
+            window.setTimeout(() => {
+                popup.classList.add('is-open');
+                popup.setAttribute('aria-hidden', 'false');
+            }, 3500);
+        }
+
         // Smooth scroll for nav links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
