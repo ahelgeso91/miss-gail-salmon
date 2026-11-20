@@ -75,6 +75,35 @@
             background: var(--ocean);
             margin: 2rem auto;
         }
+
+        .payment-options {
+            margin: 2rem 0;
+            padding: 1.5rem;
+            background: #f4eee5;
+            border-radius: 6px;
+        }
+
+        .payment-options h2 {
+            color: var(--ocean);
+            font-size: 1.35rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .payment-options p {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .payment-options a {
+            display: block;
+            margin: 0.6rem 0;
+            padding: 0.85rem 1rem;
+            background: var(--salmon);
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 4px;
+        }
     </style>
 </head>
 <body>
@@ -83,6 +112,12 @@
         <h1>Request received</h1>
         <div class="divider"></div>
         <p>Thanks. We have your request and will follow up to confirm your order and arrange pickup or delivery. Payment details will come after we confirm the order.</p>
+        <div class="payment-options">
+            <h2>Already confirmed your box?</h2>
+            <p>Pay securely with the link for your box. We’ll send a separate invoice when shipping or a custom total needs to be added.</p>
+            <a href="https://buy.stripe.com/5kQdRbbc66lneoLamR7bW01" target="_blank" rel="noopener">Pay for a 10-lb box — $230</a>
+            <a href="https://buy.stripe.com/6oU8wR3JE4df2G38eJ7bW00" target="_blank" rel="noopener">Pay for a 20-lb box — $400</a>
+        </div>
         <p style="font-size: 1rem; color: #777;">Questions? Email us at <a href="mailto:hello@missgailsalmon.com" style="color: var(--ocean);">hello@missgailsalmon.com</a></p>
         <a href="/" class="home-btn">Back to Website</a>
     </div>
